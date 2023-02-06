@@ -1,0 +1,14 @@
+open Microsoft.Quantum.Math;
+
+operation AsteroidSize(mass: Double, velocity: Double) : Double {
+    let KE = 0.5 * mass * velocity * velocity;
+    let thresholdEnergy = 5e24; // Energy threshold for an extinction level event
+
+    if (KE >= thresholdEnergy) {
+        let size = Sqrt((2 * KE) / (7.0 * 10^10));
+        return size;
+    }
+    else {
+        return 0.0;
+    }
+}
